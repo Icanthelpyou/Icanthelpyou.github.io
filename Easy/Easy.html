@@ -7,7 +7,7 @@
     <!--Bootstrap und eine CSS Datei werden verwendet-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS_File/Style.css">
-    <title>Medium</title>
+    <title>Easy</title>
 </head>
 <body>
     <!--Hier ist die von Bootsrap erzuegte Menuleiste mit den Links zum Menu, zur Anleitung und einer HTML über uns-->
@@ -16,16 +16,14 @@
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-2 text-dark" href="../Menu/Extra_HTML/Anleitung.html">Anleitung</a>
           <a class="p-2 text-dark" href="../Menu/Extra_HTML/Überuns.html">Über uns</a>
-          <a class="p-2 text-dark" href="../Menu/GuessingColore.html">Menu</a>
+          <a class="p-2 text-dark" href="../index.html">Menu</a>
         </nav>
       </div>
       <!--Die Überschrift-->
-    <h1>Das RGB-Farben Ratespiel auf Extrem Schwer
+    <h1>Das RGB-Farben Ratespiel auf Leicht
         <br> 
         <!--Hier wird dann der gesuchte RGB value angezeigt und eine Meldung wenn man gewinnt-->
         <span id="Titel">RGB</span>
-        <br>
-        <span id="Lives">Leben: 3</span>
     </h1>
     <!--Die Buttons zum Starten und zum Beenden-->
     <div class="btn-group">
@@ -37,14 +35,8 @@
             <div class="square" id="0" onclick="checkwinner(id)"></div>
             <div class="square" id="1" onclick="checkwinner(id)"></div>
             <div class="square" id="2" onclick="checkwinner(id)"></div>
-            <div class="square" id="3" onclick="checkwinner(id)"></div>
-            <div class="square" id="4" onclick="checkwinner(id)"></div>
-            <div class="square" id="5" onclick="checkwinner(id)"></div>
-            <div class="square" id="6" onclick="checkwinner(id)"></div>
-            <div class="square" id="7" onclick="checkwinner(id)"></div>
-            <div class="square" id="8" onclick="checkwinner(id)"></div>
         </div>
 <!--Die anbindung der JavaScript Datei-->
-<script src="scriptEXhard.js"></script>
+<script src="scripteasy.js"></script>
 </body>
 </html>
