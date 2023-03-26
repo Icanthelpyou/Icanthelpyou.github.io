@@ -3,7 +3,7 @@ let R = 0;
 let G = 0;
 let B = 0;
 //Die 3 Leben
-let lives = 3;
+let lives = 1;
 //Speicherort der zu findenden Farbe
 let Tofindcolor;
 //Zwischenspeicher für die Zufälligen Farben
@@ -100,5 +100,5 @@ function End(){
     Mistakes = 0;
     Wins = 0;
     StartButton.textContent = "Start";
-    lives = 3;
+    lives = 1;
 }
