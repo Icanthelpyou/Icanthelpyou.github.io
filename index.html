@@ -4,49 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/Styles.Css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+      <link rel="stylesheet" href="Menu/CSS/Styles.Css">    
+     <title>ColourGuesser</title>
 </head>
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Wiener Sehenswürdigkeiten</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal">Guess the Colour</h5>
         <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="Menu/Extra_HTML/Anleitung.html">Anleitung</a>
         </nav>
       </div>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Die Sehenswürdigkeiten Wiens auf einer Karte, um ihren Stadttripp spannend zu planen</h1>
-        <h2 class="my-0 font-weight-normal">Außerdem haben sie unten eine grafische Darstellun des Wetters in Wien</h2>
+        <h1 class="display-4">Colour guessing game</h1>
+        <p class="lead" id="Text">In diesem Spiel können sie ihre Fähigkeit trainieren RGB-Values ihren richtigen Farben zuzuordnen</p>
     </div>
     <div class="container">
-        <div class="card-deck mb-3 text-center">  
-            <h2 class="my-0 font-weight-normal">Sehenswürdigkeiten und Burgen Wiens:</h2>         
-                <div id="map"></div> 
-                <h2 class="my-0 font-weight-normal">Das Wetter in Wien  in den nächsten 48h:</h2>
-                <figure class="highcharts-figure">
-                    <div id="container">
-                      <div id="loading">
-                        <i class="fa fa-spinner fa-spin"></i> Loading data from external source
-                      </div>
-                    </div>
-                  </div>
-                  </figure>
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 box-shadow" id="BoxES">
+            <div class="card-header">
+              <h2 class="my-0 font-weight-normal">Easy</h2>
+            </div>
+            <div class="card-body">      
+                <h4 class="card-title pricing-card-title">Für Starter und Kinder</h4>             
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Unendlich Leben</li>
+                <li>Nur 3 Farben zur Auswahl</li>
+                <li>Große Unterschiede</li>
+                <li>Für junge Spieler gemacht</li>
+              </ul>
+              <button type="button" class="btn btn-lg btn-block btn-primary" id = "easy" onclick="ModeselectEasy()" >Play now!</button>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow" id="BoxME">
+            <div class="card-header">
+              <h2 class="my-0 font-weight-normal">Medium</h2>
+            </div>
+            <div class="card-body">      
+                <h4 class="card-title pricing-card-title">Der normale Spielmodus</h4>             
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>3 Leben</li>
+                <li>6 Farben die sich unterscheiden</li>
+                <li>Die Leben werden nach jeder Runde zurückgesetzt</li>
+              </ul>
+              <button type="button" class="btn btn-lg btn-block btn-primary" id="Medium" onclick="ModeselectMed()">Play now!</button>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow" id="BoxHA">
+            <div class="card-header">
+              <h2 class="my-0 font-weight-normal">Schwer</h2>
+            </div>
+            <div class="card-body">   
+                <h4 class="card-title pricing-card-title">Für erfahrene Spieler</h4>            
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>3 Leben</li>
+                <li>9 Farben zur Auswahl</li>
+                <li>Leben werden nicht zurückgesetzt</li>
+                <li>Noch machbar</li>
+              </ul>
+              <button type="button" class="btn btn-lg btn-block btn-primary" id="Hard" onclick="ModeselectHard()">Play now</button>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow" id="BoxEH">
+            <div class="card-header">
+              <h2 class="my-0 font-weight-normal">Extrem Schwer</h2>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title pricing-card-title">Even the devil will cry</h4>         
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>1 Leben</li>
+                <li>9 Farben zur Auswahl</li>
+                <li>Die farblichen Unterschiede sind kaum merkbar</li>
+                <li>Die ultimative Herausforderung</li>
+              </ul>
+              <button type="button" class="btn btn-lg btn-block btn-primary" id="EX_Hard" onclick="ModeselectEH()">Play now</button>
+            </div>  
+          </div>
         </div>
-    </div>
          
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/windbarb.js"></script>
-        <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
-        <script src="https://code.highcharts.com/modules/data.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <script src="Java/scrip_Index.js"></script>
+    <script src="Menu/script.js"></script>
 </body>
 </html>

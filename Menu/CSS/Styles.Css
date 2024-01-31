@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(48, 48, 61);
+    color: white;    
+}
+#BoxES{
+    background-color: rgb(4, 204, 211);
+    font-size: larger;
+    font-weight: 600;
+}
+#BoxME{
+    background-color: rgb(87, 226, 6);
+    font-size: larger;
+    font-weight: 600;
+}
+#BoxHA{
+    background-color: rgb(206, 156, 4);
+    font-size: larger;
+    font-weight: 600;
+}
+#BoxEH{
+    background-color: rgb(177, 3, 3);
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+}
+h5{
+    color: #000;
+}
+p{
+    font-size: xx-large;
+    border: none;
+    margin-top: 60px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
